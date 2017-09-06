@@ -17,13 +17,15 @@ mongoose.connect(config.db.uri);
  */
 
 fs.readFile('listings.json', 'utf-8', function(err, data){
-   var data_obj = JSON.parse(data);
-   for (var i = 0; i < data.length; i++){
-       var entry = Listing(data[i]);
+   var data_obj = JSON.parse(data)['entries'];
+   for (var i = 0; i < data_obj.length; i++){
+       console.log(data_obj[i])
+       var entry = Listing(data_obj[i]);
        entry.save();
    }
 });
 
+console.log('done')
 
 /* 
   Once you've written + run the script, check out your MongoLab database to ensure that 

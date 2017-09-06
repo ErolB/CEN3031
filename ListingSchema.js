@@ -9,6 +9,7 @@ var listingSchema = new Schema({
         latitude: Number,
         longitude: Number
     },
+    address: String,
     updated_at: Number,
     created_at: Number
 });
