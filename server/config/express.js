@@ -32,8 +32,8 @@ module.exports.init = function() {
   app.use('/api/listings', listingsRouter);
 
   /* go to homepage for all routes not specified */
-  app.all('/index.html', function(req, res, next){
-    next();
+  app.all('/*', function(req, res){
+    res.sendFile(path.resolve('client/index.html'));
   })
 
   return app;
