@@ -1,3 +1,10 @@
 <!-- Fill in this file to create a UI view for editing listing entries. -->
-<h1> Edit entry </h1>
-<input ng-model="$scope.code"/>
+<div class="row" ng-controller="ListingsController" ng-init="findOne()">
+    <h1> Edit entry </h1>
+    <form name="update_form" ng-submit="update(update_form.$valid)">
+        <input ng-model="code"> Code </input> <br>
+        <input ng-model="name"> Name </input> <br>
+        <input ng-model="address"> Address </input> <br>
+        <input type="submit" value="Update"/>
+    </form>
+</div>
