@@ -79,6 +79,13 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         successfully finished, navigate back to the 'listing.list' state using $state.go(). If an error 
         occurs, pass it to $scope.error. 
        */
+      var listing = {
+          name: $scope.name,
+          code: $scope.code,
+          address: $scope.address
+      };
+      Listings.update(listing);
+      $state.go('listings.list');
     };
 
     $scope.remove = function() {
