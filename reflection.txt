@@ -1,0 +1,7 @@
+CRUD operations are handled by listings.server.routes.js. This file lays out the procedures for creating, reading,
+updating, and deleting listings via requests and responses. These functions are called by listings.server.routes.js,
+which specifies how different types of HTTP requests to each endpoint are handled. Middleware is used to add
+coordinate fields to the listings during some of these procedures. This is defined in coordinates.server.controller.
+This middleware allows several functions to use the same procedure without containing any additional code for the
+coordinate lookup. The schema for the mongoose model also contains middleware (listingSchema.pre). This automatically
+assigns timestamps to each new listing, which means that the developer does not have to manage them manually.
