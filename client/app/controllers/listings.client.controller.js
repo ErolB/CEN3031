@@ -82,8 +82,8 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
       $scope.listing.address = $scope.address;
       $scope.listing.code = $scope.code;
       $scope.listing.name = $scope.name;
-      console.log('updating');
       Listings.update($scope.listing._id, $scope.listing);
+      $scope.find(); // refresh listings
       $state.go('listings.list');
     };
 
@@ -93,7 +93,7 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         display the error. 
        */
       Listings.delete($scope.listing._id);
-      $scope.find();
+      $scope.find(); // refresh listings
       $state.go('listings.list');
     };
 
@@ -104,11 +104,12 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
 
     /* Map properties */
     $scope.map = {
-      center: {
-        latitude: 29.65163059999999,
-        longitude: -82.3410518
-      }, 
-      zoom: 14
+        center: {
+            latitude: 29.65163059999999,
+            longitude: -82.3410518
+        },
+        zoom: 14,
+        point_selected: false
     }
   }
 ]);

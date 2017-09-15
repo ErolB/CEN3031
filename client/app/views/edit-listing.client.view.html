@@ -1,10 +1,25 @@
 <!-- Fill in this file to create a UI view for editing listing entries. -->
 <div class="row" ng-controller="ListingsController" ng-init="findOne()">
-    <h1> Edit entry </h1>
-    <form name="update_form" ng-submit="update(update_form.$valid)">
-        <input ng-model="code"> Code </input> <br>
-        <input ng-model="name"> Name </input> <br>
-        <input ng-model="address"> Address </input> <br>
-        <input type="submit" value="Update"/>
-    </form>
+    <div class="col-md-offset-1 col-md-10 formWrapper">
+        <div class="page-header">
+            <h3>Edit Listing</h3>
+            <fieldset>
+                <form name="update_form" ng-submit="update(update_form.$valid)">
+                    <div class="form-group">
+                        <label for="code"> Code </label>
+                        <input id="code" ng-model="code" class="form-control" placeholder="{{listing.code}}"/> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name"> Name </label>
+                        <input id="name" ng-model="name" class="form-control" placeholder="{{listing.name}}"/> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="address"> Address </label>
+                        <input id="address" ng-model="address" class="form-control" placeholder="{{listing.address}}"/> <br>
+                    </div>
+                    <input type="submit" value="Update"/>
+                </form>
+            </fieldset>
+        </div>
+    </div>
 </div>
