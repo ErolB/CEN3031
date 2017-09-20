@@ -1,0 +1,3 @@
+The server and client communicate via HTTP requests. The factory script on the client side makes requests that are handled by the router on the server side. When the user interacts with the views, functions in the client-side controller
+are called. This in turn requests information by calling functions in the factory, then changes to a new state. The state transitions are handled by the client-side router, which loads new views. The scope contains a variable called 
+"loading", which directs the view to show a certain icon when it is "true". There is also an "error" variable, which is used to broadcast error messages to other components.
