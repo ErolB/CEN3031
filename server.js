@@ -1,4 +1,4 @@
-var http = require('http'), 
+var http = require('http'),
     fs = require('fs'), 
     url = require('url'),
     port = 8080;
@@ -35,3 +35,5 @@ fs.readFile('listings.json', 'utf8', function(err, data) {
   var server = http.createServer(requestHandler);
   server.listen(port);
 });
+var app = require('./server/config/app');
+var server = app.start();
